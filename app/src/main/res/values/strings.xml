@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DemoApp</string>
+
+    <string name="error_occurred">Some error occurred.</string>
+    <string name="no_result_found">No result found.</string>
+
+</resources>
