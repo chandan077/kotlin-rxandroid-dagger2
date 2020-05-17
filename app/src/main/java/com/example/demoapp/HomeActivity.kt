@@ -59,7 +59,11 @@ class HomeActivity : AppCompatActivity(), TextWatcher {
 
     override fun afterTextChanged(str: Editable?) {
         if (str.toString().isNotEmpty())
-            viewModel.getSearchResults(str.toString())
+            if (Utility.isNetworkAvailable(this))
+                viewModel.getSearchResults(str.toString())
+            else
+                Toast.makeText(this, getString(R.string.no_internet), Toast.LENGTH_LONG).show()
+
     }
 
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
